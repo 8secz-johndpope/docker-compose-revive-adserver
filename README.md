@@ -32,3 +32,24 @@ The purpose of this small project is to quickly deploy revive-adserver-5.0.0 thr
 ## memcached cache
 1. First, you need to find out the IP address of the memcached container, and then go to the Plugins option to set the memcached Host of the Banner Delivery Cache Store Plugin, for example, 172.18.0.4:11211
 2. Go to Banner Delivery Setting under Configuration option and set Banner Delivery Cache Store Type to memcached
+
+
+## Deploy to aws
+```shell
+    sudo yum install docker
+
+    sudo curl -L https://github.com/docker/compose/releases/download/1.21.0/docker-compose-`uname -s`-`uname -m` | sudo tee /usr/local/bin/docker-compose > /dev/null
+    sudo chmod +x /usr/local/bin/docker-compose
+    sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+This will install both docker and docker-compose on your EC2 instance. To start docker, simply run:
+```shell
+sudo service docker start
+```
+
+
+Now simply CD into your project folder on the EC2 instance, and run:
+```shell
+sudo docker-compose up
+```
