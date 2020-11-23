@@ -37,7 +37,7 @@ RUN apk --update add \
 
 RUN addgroup -S  www &&  adduser -D -h /data/www -S www -G www
 
-RUN wget -qO- https://download.revive-adserver.com/revive-adserver-5.0.0.tar.gz | tar xz --strip 1 \
+RUN wget -qO- https://download.revive-adserver.com/revive-adserver-5.0.5.tar.gz | tar xz --strip 1 \
     && chown -R www:www . \
     && chmod -R a+w /data/www/var \
     && chmod -R a+w /data/www/plugins \
